@@ -72,7 +72,7 @@ a:link {
 .page-header {
   background-color: var(--bcg-white-color);   
   align-items: center;
-  border: 1px solid #ECECEC;
+  border-bottom: 1px solid #ECECEC;
 }
 .logo span {
   font-family: Raleway;
@@ -244,18 +244,19 @@ footer {
 .join{
   display: flex;
   flex-direction: column;
-  padding-left:70px;
-  margin-top:12px;
+  align-items: flex-start;
+  margin-left:70px;
+  padding-top:12px;
 }
 
 .join-title{  
-  margin:0 0 20px;
+  margin:0 0 20px; 
+
   font-family: Roboto;
   font-style:normal;
   font-size:14px;
   font-weight:700;
-  line-height:1.14;
-  text-align: left;
+  line-height:1.14;  
   letter-spacing:0.03em;
   text-transform:uppercase;
   color:var(--bcg-white-color);
@@ -297,8 +298,8 @@ footer {
 }
 
 .hero-title {
-  margin: 0 252px;
-  margin-bottom: 30px;  
+  padding: 0 252px;
+  margin:0 0 30px;  
  
   font-size: 44px;
   font-weight: 900;
@@ -420,12 +421,9 @@ footer {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
+  gap:30px
 }
 
-.team-item {
-  margin-right: 15px;
-  margin-left: 15px;
-}
 .team-item {
   text-align: center;
   background: #ffffff;
@@ -433,8 +431,18 @@ footer {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
+
+.member-info{
+  display:flex;
+  justify-content: center;
+  align-items: center;  
+  flex-direction: column;
+
+  padding: 30px 0;
+}
+
 .team-title {
-  margin: 30px 0 10px;
+  margin: 0 0 10px;
 
   font-weight: 500;
   font-size: 16px;
@@ -442,7 +450,7 @@ footer {
   
 }
 .team-text {
-  margin: 0 0 16px;
+  margin:0 0 16px;
 
   font-weight: 400;
   font-size: 16px;
@@ -451,10 +459,6 @@ footer {
   color: var(--sec-text-color);  
 }
 
-.team .social-net{  
-  padding-bottom:30px;
-
-}
 
 .social-net {
   display: flex;
@@ -483,7 +487,8 @@ footer {
   box-shadow: 0 4px 4px  rgba(0, 0, 0, 0.25);
 }
 
-.social-link:hover .social-icon{
+.social-link:hover .social-icon,
+.social-link:focus .social-icon{
   fill: var(--bcg-white-color);
 }
 
@@ -504,7 +509,7 @@ footer {
   border-radius:4px;
 }
 .client-icon{ 
-  padding:8px 16px; 
+  width:106px; 
   height:60px;
   fill:#AFB1B8;
 }
@@ -513,7 +518,8 @@ footer {
 .client-link:focus {
   border-color:var(--accent-color);
 }
-.client-link:hover .client-icon{
+.client-link:hover .client-icon,
+.client-link:focus .client-icon{
   fill:var(--accent-color);
 }
 
