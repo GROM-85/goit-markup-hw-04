@@ -35,7 +35,7 @@
         </nav>
         <ul class="contacts list">
           <li class="item">
-            <a href="mailto:info@example.com" class="email link">
+            <a href="mailto:info@example.com" class="email link" aria-label="email">
               <svg class="contacts-icon">
                 <use href="./images/svg/icons.svg#icon-envelope"></use>
               </svg>
@@ -43,7 +43,7 @@
             >
           </li>
           <li class="item">
-            <a href="tel:+380961111111" class="phone link">
+            <a href="tel:+380961111111" class="phone link" aria-label="phone">
               <svg class="contacts-icon">
                 <use href="./images/svg/icons.svg#icon-phone"></use>
               </svg>
@@ -58,9 +58,11 @@
       <section class="hero hero-overlay">
         <div class="container">
           <h1 class="hero-title">EFFECTIVE SOLUTIONS FOR <br> YOUR BUSINESS</h1>
-          <button class="btn primary" type="button">Request our service</button>
+          <button class="btn primary" type="button " data-modal-open>Request our service</button>
         </div>
       </section>
+
+      
 
       <section class="advantages section">
         <div class="container">
@@ -104,6 +106,10 @@
           <ul class="activity list">
             <li class="activity-item">
               <img src="images/img1.jpg" alt="first" width="370" height="294" />
+              <div class="activity-overlay">
+                <p>DESKTOP APPS</p>
+              </div>
+              
             </li>
             <li class="activity-item">
               <img
@@ -112,9 +118,17 @@
                 width="370"
                 height="294"
               />
+              <div class="activity-overlay">
+                <p>MOBILE APPS</p>
+              </div>
+              
             </li>
             <li class="activity-item">
               <img src="images/img3.jpg" alt="third" width="370" height="294" />
+              <div class="activity-overlay">
+                <p>DESIGN SOLUTIONS</p>
+              </div>
+              
             </li>
           </ul>
         </div>
@@ -505,5 +519,22 @@
         </div>
       </div>
     </footer>
+
+    <!-- MODAL WINDOW -->
+    
+    <div class="backdrop is-hidden" backdrop>
+      <div class="modal-data">
+        <button class="button-close" data-modal-close>
+          <svg class="icon-close">
+            <use href="./images/svg/icons-backup.svg#close"></use>
+          </svg>
+          
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js">      
+    </script>
+
   </body>
 </html>

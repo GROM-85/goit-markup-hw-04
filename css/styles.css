@@ -30,6 +30,7 @@ button{
   margin:0;
   font-family:inherit;
   background-color:transparent;
+  cursor:pointer;
 }
 
 .list {
@@ -272,7 +273,70 @@ footer {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* ------------ Modal WINDOW ----------------- */
 
+.backdrop.is-hidden{  
+  opacity:0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal-data {
+  transform: translate(-50%,50%) scale(0);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop{
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+.modal-data{ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width:528px;
+  height:581px; 
+  border: transparent;
+  border-radius: 4px;  
+  background-color: var(--bcg-white-color);
+
+  transform: translate(-50%, -50%) scale(1) rotate(360deg);
+  transition: transform 500ms cubic-bezier(0.4,0,0.2,1) ; 
+  
+}
+
+
+ 
+
+.button-close{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:30px;
+  height:30px;
+  border-radius: 50%;   
+  color: rgba(0, 0, 0, 0.1);
+  
+}
+
+.icon-close{  
+  width:30px;
+  height:30px;
+  stroke:currentColor;
+  fill:white;
+}
+
+.button-close:hover{
+  color:var(--accent-color);
+}
 /* ---------------- INDEX -> main -------------*/
 
 
@@ -312,7 +376,7 @@ footer {
   line-height: 1.36;
   letter-spacing: 0.06rem;
   text-transform: uppercase;
-  /* outline: 2px dotted #117fd8; */
+  
   
 }
 .btn.primary {  
@@ -402,6 +466,9 @@ footer {
   text-align: left;
 }
 
+.activity img{
+  display:block; 
+}
 .activity-section {
   padding-bottom: 94px;
 }
@@ -414,6 +481,30 @@ footer {
   margin-right: 30px;
 }
 
+.activity-item{
+  position:relative;
+}
+
+.activity-overlay{
+  display: block;
+  position:absolute;
+  bottom:0;
+  width:100%;  
+  background-color: rgba(47, 48, 58, 0.8);;
+}
+
+
+.activity-overlay > p{
+  margin:0;
+  padding: 27px 107px;
+  font-size: 14px;
+  font-weight:700; 
+  text-align: center;
+  line-height: calc(16,4/14); 
+  letter-spacing: 0.03em;
+  color:var(--bcg-white-color);
+
+}
 /*  ---------------- Team Section ---------------- */
 
 .team-section {
@@ -564,16 +655,7 @@ footer {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
-.card {  
-  width: 370px;   
-}
 
-.card:hover,
-.card:focus{
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
-   0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
 
 /* css n counts from 0 indice, but elements form 1  */
 
@@ -591,8 +673,48 @@ footer {
   gap:30px;
 }
 
-.card-overlay img{
+.card {
+  width: 370px;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.card-img{
+  display: block;
+}
+
+.card-box-relative{
+  position:relative;
+  overflow: hidden;
+}
+
+.card-overlay{  
+  position:absolute;
+  margin: 0;
+  bottom:0;      
+  
+  height:110%;
+  transform:translateY(100%);
+  transition:transform 250ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.card-box-relative:hover .card-overlay{   
+ transform: translateY(0);
+}  
+
+
+.card-overlay > p{
   display:block;
+  padding:103px 24px;
+  font-size:18px;
+  line-height:1,55;
+  color:var(--bcg-white-color);
+  background-color: rgba(33, 150, 243, 0.9);
 }
 
 .card-info{
